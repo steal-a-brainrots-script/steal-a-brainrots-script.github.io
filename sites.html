@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Sites – Roblox Script Hubs 2025</title>
+  <meta name="description" content="All trusted Roblox script hub sites in one place. Find scripts for Fish it, 99 Nights in the Forest, Grow a Garden, Fisch, Voidstrap, Chevstrap and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface2: #1a1a26;
+      --border: #2a2a3d;
+      --accent: #7c3aed;
+      --accent2: #a855f7;
+      --accent-glow: rgba(124,58,237,0.35);
+      --text: #e2e2f0;
+      --muted: #8888aa;
+      --green: #22c55e;
+      --yellow: #fbbf24;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Syne', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      display: flex; align-items: center; gap: 2rem;
+      height: 56px;
+    }
+    .nav-brand { font-size: 1rem; font-weight: 800; color: var(--accent2); text-decoration: none; white-space: nowrap; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 2.5rem;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.18), transparent);
+    }
+    .hero-icon { font-size: 3.5rem; margin-bottom: .5rem; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: .5rem; }
+    .hero h1 span { color: var(--accent2); }
+    .hero-sub { font-family: var(--mono); font-size: .78rem; color: var(--muted); margin-bottom: 1.5rem; letter-spacing: .05em; }
+    .badge-row { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+    .badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 99px; padding: .25rem .85rem; font-size: .72rem; font-family: var(--mono); color: var(--muted); }
+    .badge.green { border-color: var(--green); color: var(--green); }
+
+    /* CONTAINER */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    /* SECTION TITLE */
+    .section-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 1.2rem; display: flex; align-items: center; gap: .6rem; }
+    .section-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent2); display: inline-block; }
+
+    /* SITES GRID */
+    .sites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .site-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.3rem;
+      display: flex; flex-direction: column; gap: .9rem;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      position: relative; overflow: hidden;
+      text-decoration: none; color: inherit;
+    }
+    .site-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      opacity: 0; transition: opacity .2s;
+    }
+    .site-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 24px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+    .site-card:hover::before { opacity: 1; }
+
+    /* unique accent colors per card */
+    .site-card:nth-child(1)::before { background: linear-gradient(90deg, #06b6d4, #3b82f6); }
+    .site-card:nth-child(2)::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+    .site-card:nth-child(3)::before { background: linear-gradient(90deg, #22c55e, #84cc16); }
+    .site-card:nth-child(4)::before { background: linear-gradient(90deg, #f97316, #fbbf24); }
+    .site-card:nth-child(5)::before { background: linear-gradient(90deg, #ec4899, #a855f7); }
+    .site-card:nth-child(6)::before { background: linear-gradient(90deg, #ef4444, #f97316); }
+
+    .site-top { display: flex; align-items: center; gap: .85rem; }
+    .site-emoji {
+      width: 48px; height: 48px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+    .site-info { flex: 1; min-width: 0; }
+    .site-name { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: .1rem; }
+    .site-url { font-family: var(--mono); font-size: .68rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .site-desc { font-size: .84rem; color: var(--muted); line-height: 1.6; }
+
+    .site-tags { display: flex; gap: .45rem; flex-wrap: wrap; }
+    .site-tag {
+      font-size: .63rem; font-family: var(--mono);
+      padding: .18rem .6rem; border-radius: 99px;
+      background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+    }
+
+    .btn-visit {
+      display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+      font-family: var(--mono); font-size: .75rem; font-weight: 700;
+      padding: .55rem 1rem; border-radius: 8px;
+      background: var(--accent); color: #fff; border: 1px solid var(--accent);
+      text-decoration: none; transition: all .18s; width: 100%;
+    }
+    .btn-visit:hover { background: var(--accent2); border-color: var(--accent2); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; font-size: .75rem; color: var(--muted); font-family: var(--mono); }
+
+    @media(max-width:520px) {
+      .sites-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">🧠 Steal a Brainrot</a>
+  <div class="nav-links">
+    <a href="index.html">Scripts</a>
+    <a href="codes.html">Codes</a>
+    <a href="sites.html" class="active">All Sites</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">🌐</div>
+  <h1>All <span>Script</span> Sites</h1>
+  <p class="hero-sub">// Trusted Roblox Script Hubs — All in One Place</p>
+  <div class="badge-row">
+    <span class="badge green">✓ 6 Trusted Sites</span>
+    <span class="badge">🔗 Direct Links</span>
+    <span class="badge">🛡️ Safe & Verified</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <h2 class="section-title"><span class="dot"></span> Trusted Script Hub Sites</h2>
+
+  <div class="sites-grid">
+
+    <!-- 1 Fish it Script -->
+    <div class="site-card">
+      <div class="site-top">
+        <div class="site-emoji">🎣</div>
+        <div class="site-info">
+          <div class="site-name">Fish it Script</div>
+          <div class="site-url">fishitscripts.com</div>
+        </div>
+      </div>
+      <div class="site-desc">Best scripts hub for Fish it on Roblox. Auto Fish, Auto Sell, ESP, Teleport and more — all keyless and updated regularly.</div>
+      <div class="site-tags">
+        <span class="site-tag">Auto Fish</span>
+        <span class="site-tag">Auto Sell</span>
+        <span class="site-tag">ESP</span>
+        <span class="site-tag">Keyless</span>
+      </div>
+      <a class="btn-visit" href="https://fishitscripts.com/" target="_blank" rel="noopener">🔗 Visit Site →</a>
+    </div>
+
+    <!-- 2 99 Nights in the Forest -->
+    <div class="site-card">
+      <div class="site-top">
+        <div class="site-emoji">🌙</div>
+        <div class="site-info">
+          <div class="site-name">99 Nights in the Forest Script</div>
+          <div class="site-url">99nightsintheforestscript.com</div>
+        </div>
+      </div>
+      <div class="site-desc">Complete scripts hub for 99 Nights in the Forest. Auto Farm, Kill Aura, Bring Items, Auto Diamond, Safe Mode and much more.</div>
+      <div class="site-tags">
+        <span class="site-tag">Auto Farm</span>
+        <span class="site-tag">Kill Aura</span>
+        <span class="site-tag">Auto Diamond</span>
+        <span class="site-tag">Safe Mode</span>
+      </div>
+      <a class="btn-visit" href="https://99nightsintheforestscript.com/" target="_blank" rel="noopener">🔗 Visit Site →</a>
+    </div>
+
+    <!-- 3 Grow a Garden -->
+    <div class="site-card">
+      <div class="site-top">
+        <div class="site-emoji">🌱</div>
+        <div class="site-info">
+          <div class="site-name">Grow a Garden Script</div>
+          <div class="site-url">growagardenscript.com</div>
+        </div>
+      </div>
+      <div class="site-desc">Top scripts for Grow a Garden Roblox game. Auto Plant, Auto Harvest, Auto Sell, Speed Boost and unlimited growth hacks.</div>
+      <div class="site-tags">
+        <span class="site-tag">Auto Plant</span>
+        <span class="site-tag">Auto Harvest</span>
+        <span class="site-tag">Auto Sell</span>
+        <span class="site-tag">Speed Boost</span>
+      </div>
+      <a class="btn-visit" href="https://growagardenscript.com/" target="_blank" rel="noopener">🔗 Visit Site →</a>
+    </div>
+
+    <!-- 4 Fisch Script -->
+    <div class="site-card">
+      <div class="site-top">
+        <div class="site-emoji">🐟</div>
+        <div class="site-info">
+          <div class="site-name">Fisch Script</div>
+          <div class="site-url">thefischscript.com</div>
+        </div>
+      </div>
+      <div class="site-desc">Premium Fisch Roblox scripts with Auto Catch, Auto Sell, Rare Fish ESP, Teleport to fishing spots and anti-detection features.</div>
+      <div class="site-tags">
+        <span class="site-tag">Auto Catch</span>
+        <span class="site-tag">Fish ESP</span>
+        <span class="site-tag">Teleport</span>
+        <span class="site-tag">Anti-Ban</span>
+      </div>
+      <a class="btn-visit" href="https://thefischscript.com/" target="_blank" rel="noopener">🔗 Visit Site →</a>
+    </div>
+
+    <!-- 5 Voidstrap -->
+    <div class="site-card">
+      <div class="site-top">
+        <div class="site-emoji">⚡</div>
+        <div class="site-info">
+          <div class="site-name">Voidstrap</div>
+          <div class="site-url">voidstrap.net</div>
+        </div>
+      </div>
+      <div class="site-desc">Powerful multi-game script hub with advanced automation tools, GUI loaders and regularly updated scripts for top Roblox games.</div>
+      <div class="site-tags">
+        <span class="site-tag">Multi-Game</span>
+        <span class="site-tag">GUI Loader</span>
+        <span class="site-tag">Auto Farm</span>
+        <span class="site-tag">Updated</span>
+      </div>
+      <a class="btn-visit" href="https://voidstrap.net/" target="_blank" rel="noopener">🔗 Visit Site →</a>
+    </div>
+
+    <!-- 6 Chevstrap -->
+    <div class="site-card">
+      <div class="site-top">
+        <div class="site-emoji">🔥</div>
+        <div class="site-info">
+          <div class="site-name">Chevstrap</div>
+          <div class="site-url">chevstrap.net</div>
+        </div>
+      </div>
+      <div class="site-desc">Trusted Roblox script loader with a clean interface, keyless options and wide game support. Fast execution and reliable uptime.</div>
+      <div class="site-tags">
+        <span class="site-tag">Keyless</span>
+        <span class="site-tag">Fast Exec</span>
+        <span class="site-tag">Multi-Game</span>
+        <span class="site-tag">Reliable</span>
+      </div>
+      <a class="btn-visit" href="https://chevstrap.net/" target="_blank" rel="noopener">🔗 Visit Site →</a>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Steal a Brainrot Community — scripts shared by players. Not affiliated with Roblox.
+</footer>
+
+</body>
+</html>
