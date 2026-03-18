@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steal a Brainrot Script – Auto Farm, Kill Aura & More Roblox 2025</title>
+  <meta name="description" content="Best Steal a Brainrot scripts hub! Auto Farm, Kill Aura, ESP, Teleport, Auto Collect and more. 100% working Roblox scripts 2025.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface2: #1a1a26;
+      --border: #2a2a3d;
+      --accent: #7c3aed;
+      --accent2: #a855f7;
+      --accent-glow: rgba(124,58,237,0.35);
+      --text: #e2e2f0;
+      --muted: #8888aa;
+      --green: #22c55e;
+      --red: #ef4444;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Syne', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      display: flex; align-items: center; gap: 2rem;
+      height: 56px;
+    }
+    .nav-brand {
+      font-size: 1rem; font-weight: 800; color: var(--accent2);
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.85rem; font-weight: 600;
+      transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 2.5rem;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.18), transparent);
+    }
+    .hero-icon { font-size: 3.5rem; margin-bottom: .5rem; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800; color: #fff;
+      line-height: 1.15; margin-bottom: .5rem;
+    }
+    .hero h1 span { color: var(--accent2); }
+    .hero-sub {
+      font-family: var(--mono); font-size: .78rem;
+      color: var(--muted); margin-bottom: 1.5rem; letter-spacing: .05em;
+    }
+    .badge-row { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+    .badge {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 99px; padding: .25rem .85rem;
+      font-size: .72rem; font-family: var(--mono); color: var(--muted);
+    }
+    .badge.green { border-color: var(--green); color: var(--green); }
+
+    /* ── WARNING BOX ── */
+    .warning {
+      max-width: 780px; margin: 0 auto 2.5rem;
+      background: rgba(239,68,68,.07);
+      border: 1px solid rgba(239,68,68,.3);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      font-size: .82rem; color: #fca5a5; line-height: 1.5;
+    }
+    .warning strong { color: var(--red); }
+
+    /* ── CONTAINER ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    /* ── INTRO ── */
+    .intro { margin-bottom: 2.5rem; }
+    .intro h2 { font-size: 1.45rem; font-weight: 800; margin-bottom: .6rem; }
+    .intro p { color: var(--muted); font-size: .9rem; line-height: 1.7; }
+
+    /* ── SCRIPT CARDS ── */
+    .script-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem; }
+    .script-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .script-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .script-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .85rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+    .script-num {
+      font-family: var(--mono); font-size: .7rem;
+      color: var(--accent2); background: rgba(124,58,237,.15);
+      border-radius: 6px; padding: .15rem .5rem; white-space: nowrap;
+    }
+    .script-title { font-size: .95rem; font-weight: 600; flex: 1; }
+    .script-badge {
+      font-size: .65rem; font-family: var(--mono);
+      padding: .15rem .55rem; border-radius: 99px; white-space: nowrap;
+    }
+    .script-badge.keyless { background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.35); color: var(--green); }
+    .script-badge.key { background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.3); color: #fbbf24; }
+
+    .script-body { padding: 1rem 1.2rem; }
+    .script-body h4 { font-size: .72rem; font-family: var(--mono); color: var(--muted); margin-bottom: .5rem; letter-spacing: .08em; text-transform: uppercase; }
+    .code-block {
+      background: #0d0d14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .8rem 1rem;
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: #c4b5fd;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.55;
+      margin-bottom: .8rem;
+    }
+    .btn-row { display: flex; gap: .6rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-family: var(--mono); font-size: .72rem; font-weight: 700;
+      padding: .45rem 1rem; border-radius: 7px; cursor: pointer;
+      border: 1px solid transparent; transition: all .18s; text-decoration: none;
+    }
+    .btn-copy {
+      background: var(--accent); color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-copy:hover { background: var(--accent2); border-color: var(--accent2); }
+    .btn-copy.copied { background: var(--green); border-color: var(--green); }
+    .btn-dl {
+      background: transparent; color: var(--muted);
+      border-color: var(--border);
+    }
+    .btn-dl:hover { color: var(--text); border-color: var(--accent); }
+
+    /* ── FEATURES TABLE ── */
+    .section-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem; }
+    .feat-table { width: 100%; border-collapse: collapse; margin-bottom: 2.5rem; font-size: .85rem; }
+    .feat-table th {
+      background: var(--surface2); text-align: left;
+      padding: .7rem 1rem; color: var(--muted);
+      font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em;
+      border-bottom: 1px solid var(--border);
+    }
+    .feat-table td { padding: .7rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .feat-table tr:last-child td { border-bottom: none; }
+    .feat-table tr:hover td { background: var(--surface2); }
+    .feat-name { font-weight: 700; color: var(--accent2); white-space: nowrap; }
+
+    /* ── HOW TO USE ── */
+    .steps { counter-reset: step; display: flex; flex-direction: column; gap: .7rem; margin-bottom: 2.5rem; }
+    .step {
+      counter-increment: step;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .85rem 1.1rem .85rem 1rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .step-num {
+      min-width: 28px; height: 28px;
+      background: var(--accent); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: .75rem; font-weight: 700; color: #fff;
+    }
+    .step-num::before { content: counter(step); }
+    .step-text { font-size: .88rem; color: var(--text); line-height: 1.5; }
+    .step-text strong { color: var(--accent2); }
+
+    /* ── FAQ ── */
+    .faq { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 3rem; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: .9rem 1.1rem;
+      font-size: .9rem; font-weight: 600; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      user-select: none;
+    }
+    .faq-q:hover { color: var(--accent2); }
+    .faq-q .arrow { transition: transform .2s; font-size: .75rem; color: var(--muted); }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+      font-size: .85rem; color: var(--muted); line-height: 1.65;
+      padding: 0 1.1rem;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 1.1rem .9rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem; text-align: center;
+      font-size: .75rem; color: var(--muted); font-family: var(--mono);
+    }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      background: var(--green); color: #fff;
+      font-family: var(--mono); font-size: .78rem;
+      padding: .6rem 1.2rem; border-radius: 8px;
+      opacity: 0; transform: translateY(8px);
+      transition: all .25s; pointer-events: none;
+      z-index: 999;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+
+    @media(max-width:600px) {
+      .script-header { flex-wrap: wrap; }
+      .feat-table { font-size: .78rem; }
+      .feat-table th, .feat-table td { padding: .5rem .6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">🧠 Steal a Brainrot</a>
+  <div class="nav-links">
+    <a href="#" class="active">Scripts</a>
+    <a href="codes.html">Codes</a>
+    <a href="sites.html">All Sites</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">🧠</div>
+  <h1>Steal a <span>Brainrot</span></h1>
+  <p class="hero-sub">// Scripts &amp; Codes Hub — Roblox 2025</p>
+  <div class="badge-row">
+    <span class="badge green">✓ 100% Working</span>
+    <span class="badge">🔥 50+ Scripts</span>
+    <span class="badge">📱 Mobile Support</span>
+    <span class="badge">🔓 Keyless Options</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="warning">
+    <strong>⚠️ Important:</strong> Use scripts responsibly and at your own risk. Test in private servers when possible to avoid detection. Excessive use may result in account warnings or bans. Always use trusted executors.
+  </div>
+
+  <div class="intro">
+    <h2>Steal a Brainrot Script Collection (100% Working)</h2>
+    <p>Welcome to the ultimate Steal a Brainrot scripts hub! These powerful automation tools unlock features like Auto Steal, Kill Aura, Auto Farm, ESP, Teleport, Auto Collect Brainrots, and much more. With millions of active players, this game has become one of Roblox's most trending experiences. Each script below is fully functional and can be copied or downloaded as a <code style="font-family:var(--mono);color:var(--accent2)">.lua</code> file for easy execution.</p>
+  </div>
+
+  <!-- SCRIPTS -->
+  <div class="script-list">
+
+    <!-- 1 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#01</span>
+        <span class="script-title">Keyless – Auto Steal, Auto Farm Brainrots</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://pastebin.com/raw/BrainrotFarm1"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#02</span>
+        <span class="script-title">BrainHub – Multi-Feature GUI</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet('https://brainhub.xyz/api/repo?id=main'))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#03</span>
+        <span class="script-title">CpsHub – Kill Aura, Auto Steal, ESP, Teleport</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://raw.githubusercontent.com/Rx1m/CpsHub/refs/heads/main/Hub", true))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#04</span>
+        <span class="script-title">ToastyXD Hub – Premium Features</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://raw.githubusercontent.com/nouralddin-abdullah/ToastyHub-XD/refs/heads/main/hub-main.lua"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#05</span>
+        <span class="script-title">Voidware – Bring All Brainrots, Auto-Win</span>
+        <span class="script-badge key">KEY REQUIRED</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/brainrot.lua", true))()
+--key: sorryforkeyupdate</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#06</span>
+        <span class="script-title">Speed Hub X – Auto Collect, Speed Boost</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#07</span>
+        <span class="script-title">Elude Hub – Auto Steal + Evasion</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkenedEssence/Elude/refs/heads/main/Loader.lua"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#08</span>
+        <span class="script-title">Combo Wick – Kill Aura, Auto Farm</span>
+        <span class="script-badge key">KEY: 111222HHH</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://cdn.authguard.org/virtual-file/4cc9b982299840008b7d08796f54aaea"))()
+--key: 111222HHH</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#09</span>
+        <span class="script-title">Horizon Hub – ESP, Teleport, Auto Steal</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://raw.githubusercontent.com/Laspard69/HorizonHub/refs/heads/main/loader.lua", true))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#10</span>
+        <span class="script-title">Delta Scripts – No Key, ESP, Infinite Brainrots</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://raw.githubusercontent.com/SLK-gaming/Hutao-Hub/refs/heads/main/Steal-A-Brainrot.txt", true))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#11</span>
+        <span class="script-title">Hoho Hub – Kill Aura, Bring Brainrots</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://pastebin.com/raw/QRfGNELm"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#12</span>
+        <span class="script-title">Gec Hub – Bring Items, Speed, Fly, Kill Aura</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://pastebin.com/raw/NTpCMwn8"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#13</span>
+        <span class="script-title">OverFlow Hub – All Features</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://pastebin.com/raw/3T1VunNZ"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#14</span>
+        <span class="script-title">Vortex Hub – Auto Steal, Auto Win</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://pastefy.app/qxDbSVlo/raw"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-num">#15</span>
+        <span class="script-title">Moon Hub – Auto Collect, Teleport, ESP</span>
+        <span class="script-badge keyless">KEYLESS</span>
+      </div>
+      <div class="script-body">
+        <h4>Script</h4>
+        <div class="code-block">loadstring(game:HttpGet("https://pastebin.com/raw/bhi4LinA"))()
+</div>
+        <div class="btn-row">
+          <button class="btn btn-copy" onclick="copyScript(this)">📋 Copy Script</button>
+          <button class="btn btn-dl" onclick="downloadScript(this)">⬇ Download .lua</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /script-list -->
+
+  <!-- FEATURES TABLE -->
+  <h2 class="section-title">Key Features</h2>
+  <table class="feat-table">
+    <thead>
+      <tr><th>Feature</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="feat-name">Auto Steal</td><td>Automatically steals brainrots from other players instantly.</td></tr>
+      <tr><td class="feat-name">Auto Farm</td><td>Collects resources and brainrots automatically across the map.</td></tr>
+      <tr><td class="feat-name">Kill Aura</td><td>Automatically attacks enemies and players within range.</td></tr>
+      <tr><td class="feat-name">ESP System</td><td>See players, brainrots, and items through walls with highlights.</td></tr>
+      <tr><td class="feat-name">Teleport</td><td>Instantly travel to any location or player on the map.</td></tr>
+      <tr><td class="feat-name">Bring Items</td><td>Teleports all brainrots directly to your location.</td></tr>
+      <tr><td class="feat-name">Speed Boost</td><td>Increase your movement speed for faster collection.</td></tr>
+      <tr><td class="feat-name">Auto Win</td><td>Automatically completes win conditions every round.</td></tr>
+      <tr><td class="feat-name">Safe Mode</td><td>Anti-ban protection to minimize detection risks.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- HOW TO USE -->
+  <h2 class="section-title">How To Use Steal a Brainrot Scripts</h2>
+  <div class="steps">
+    <div class="step"><span class="step-num"></span><span class="step-text"><strong>Download Executor:</strong> Get Delta, Codex, Wave, Xeno, or Velocity. Mobile: Delta iOS, Codex iOS, Fluxus Android.</span></div>
+    <div class="step"><span class="step-num"></span><span class="step-text"><strong>Install &amp; Setup:</strong> Complete installation and unlock with key if needed.</span></div>
+    <div class="step"><span class="step-num"></span><span class="step-text"><strong>Launch Game:</strong> Open Roblox and join Steal a Brainrot.</span></div>
+    <div class="step"><span class="step-num"></span><span class="step-text"><strong>Inject Executor:</strong> Click "Inject" or "Attach" to connect the executor to the game.</span></div>
+    <div class="step"><span class="step-num"></span><span class="step-text"><strong>Copy Script:</strong> Use the "Copy Script" button on any script above.</span></div>
+    <div class="step"><span class="step-num"></span><span class="step-text"><strong>Paste &amp; Execute:</strong> Paste the script into the executor and click "Execute".</span></div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Are these scripts safe to use? <span class="arrow">▼</span></div>
+      <div class="faq-a">Scripts from trusted sources are generally safe, but any script usage carries account risk. Always test in private servers first and enable safe mode when available.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do I need keys for these scripts? <span class="arrow">▼</span></div>
+      <div class="faq-a">Many scripts are keyless for instant access. Scripts marked "KEYLESS" work immediately without any verification. Others require a simple key system as shown in the script comment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Can I use scripts on mobile? <span class="arrow">▼</span></div>
+      <div class="faq-a">Yes! Many scripts are mobile-compatible. Use mobile executors like Delta iOS, Codex iOS, or Fluxus Android for iOS and Android devices.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Which script is best for stealing brainrots? <span class="arrow">▼</span></div>
+      <div class="faq-a">Scripts #1, #2, #6, and #10 are optimized for auto-stealing and collecting brainrots with safe mode features. Try BrainHub (#2) for the best GUI experience.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How do I avoid getting banned? <span class="arrow">▼</span></div>
+      <div class="faq-a">Test in private servers, use scripts with anti-ban/safe mode, avoid excessive features in public servers, and don't use scripts 24/7. Moderate usage is key to staying safe.</div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  © 2025 Steal a Brainrot Community — scripts shared by players. Not affiliated with Roblox.
+</footer>
+
+<div id="toast">✓ Copied to clipboard!</div>
+
+<script>
+  function copyScript(btn) {
+    const code = btn.closest('.script-body').querySelector('.code-block').innerText;
+    navigator.clipboard.writeText(code.trim()).then(() => {
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      showToast();
+      setTimeout(() => {
+        btn.textContent = '📋 Copy Script';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  function downloadScript(btn) {
+    const code = btn.closest('.script-body').querySelector('.code-block').innerText;
+    const card = btn.closest('.script-card');
+    const title = card.querySelector('.script-title').innerText.replace(/[^a-z0-9]/gi,'_');
+    const blob = new Blob([code.trim()], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = title + '.lua';
+    a.click();
+  }
+
+  function showToast() {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
